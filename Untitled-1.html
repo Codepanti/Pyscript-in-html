@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+</head>
+<body>
+
+    <h2>Sum Calculator</h2>
+
+    <form id="sumForm">
+        <label for="num1">Enter number 1:</label>
+        <input type="text" id="num1" name="num1" required>
+
+        <label for="num2">Enter number 2:</label>
+        <input type="text" id="num2" name="num2" required>
+
+        <button type="button" onclick="calculateSum()">Calculate Sum</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSum() {
+            // Get the values from the input fields
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if the input values are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            // Calculate the sum
+            var sum = num1 + num2;
+
+            // Display the result
+            document.getElementById("result").innerText = "Sum: " + sum;
+        }
+    </script>
+
+</body>
+</html>
